@@ -1,0 +1,396 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #6c5ce7;
+  --primary-dark: #5849d6;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --white: #ffffff;
+  --border: #e5e7eb;
+  --background: #f5f7ff;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #dcd6ff 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #c7f0ff 0%, transparent 35%),
+    var(--background);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  color: var(--text);
+}
+
+.app {
+  width: 100%;
+  max-width: 520px;
+}
+
+.calculator-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 28px;
+
+  padding: 40px;
+
+  box-shadow:
+    0 25px 60px rgba(42, 45, 80, 0.15);
+
+  animation: cardAppear 0.6s ease;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+
+.header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eeeaff;
+  border-radius: 20px;
+
+  font-size: 32px;
+}
+
+.header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.header p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Form */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+.date-wrapper {
+  position: relative;
+}
+
+.date-wrapper input {
+  width: 100%;
+
+  height: 58px;
+
+  border: 2px solid var(--border);
+  border-radius: 14px;
+
+  padding: 0 50px 0 16px;
+
+  font-size: 16px;
+  color: var(--text);
+
+  background: #fafafa;
+
+  outline: none;
+
+  transition: 0.25s ease;
+}
+
+.date-wrapper input:focus {
+  border-color: var(--primary);
+  background: white;
+
+  box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.1);
+}
+
+.calendar-icon {
+  position: absolute;
+
+  right: 17px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 20px;
+
+  pointer-events: none;
+}
+
+/* Button */
+
+.calculate-btn {
+  width: 100%;
+  height: 58px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    #8b7cf6
+  );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  transition: 0.25s ease;
+
+  box-shadow: 0 10px 25px rgba(108, 92, 231, 0.25);
+}
+
+.calculate-btn span {
+  font-size: 22px;
+
+  transition: transform 0.25s ease;
+}
+
+.calculate-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 14px 30px rgba(108, 92, 231, 0.32);
+}
+
+.calculate-btn:hover span {
+  transform: translateX(5px);
+}
+
+.calculate-btn:active {
+  transform: translateY(0);
+}
+
+/* Error */
+
+.error {
+  min-height: 22px;
+
+  text-align: center;
+
+  color: #e63946;
+
+  font-size: 14px;
+
+  margin-top: 12px;
+}
+
+/* Result */
+
+.result {
+  margin-top: 25px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid var(--border);
+}
+
+.result-title {
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--muted);
+
+  margin-bottom: 16px;
+}
+
+.age-boxes {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+}
+
+.age-box {
+  background: #f7f6ff;
+
+  border: 1px solid #ebe8ff;
+
+  border-radius: 16px;
+
+  padding: 18px 10px;
+
+  text-align: center;
+
+  transition: 0.25s ease;
+}
+
+.age-box:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.1);
+}
+
+.age-box strong {
+  display: block;
+
+  font-size: 28px;
+
+  color: var(--primary);
+
+  margin-bottom: 5px;
+}
+
+.age-box span {
+  font-size: 12px;
+
+  color: var(--muted);
+
+  font-weight: 600;
+}
+
+/* Birthday */
+
+.next-birthday {
+  margin-top: 18px;
+
+  padding: 15px;
+
+  border-radius: 14px;
+
+  background: #f9fafb;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.next-birthday span {
+  font-size: 22px;
+}
+
+.next-birthday p {
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: var(--muted);
+}
+
+/* Footer */
+
+.footer {
+  margin-top: 28px;
+
+  text-align: center;
+
+  font-size: 12px;
+
+  color: #9ca3af;
+}
+
+.footer span {
+  margin-right: 4px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .calculator-card {
+    padding: 30px 22px;
+
+    border-radius: 22px;
+  }
+
+  .header {
+    margin-bottom: 28px;
+  }
+
+  .header h1 {
+    font-size: 27px;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
+
+    font-size: 27px;
+  }
+
+  .age-box {
+    padding: 15px 8px;
+  }
+
+  .age-box strong {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+
+  .calculator-card {
+    padding: 25px 17px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .age-boxes {
+    gap: 7px;
+  }
+
+  .age-box strong {
+    font-size: 21px;
+  }
+
+  .age-box span {
+    font-size: 11px;
+  }
+}
