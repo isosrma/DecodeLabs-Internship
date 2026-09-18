@@ -1,0 +1,21 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+
+# Environment files and local secrets
+.env
+.env.*
+!.env.example
+
+# Local tooling and nested repository metadata
+.prisma/
+.git/
+Backend/.git/
+Backend/.git-preserved/
+
+# Logs and editor files
+*.log
+.DS_Store
+.vscode/

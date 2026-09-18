@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+
+/* ------------------------ */
+/* 1️⃣ Root variables        */
+/* ------------------------ */
+:root {
+  /* Primary palette */
+  --primary-50: #e1e8ef;
+  --primary-100: #d4dee7;
+  --primary-200: #b7c7d7;
+  --primary-300: #99b0c7;
+  --primary-400: #7c99b6;
+  --primary-500: #5e82a6;
+  --primary-600: #4c6b8a;
+  --primary-700: #3c546c;
+  --primary-800: #2c3d4f;
+  --primary-900: #1b2631;
+  --primary-950: #141c24;
+
+  /* Accent palette */
+  --accent-50: #faf5f0;
+  --accent-100: #f4ece1;
+  --accent-200: #e8d6bf;
+  --accent-300: #ddc2a2;
+  --accent-400: #d2af84;
+  --accent-500: #c69963;
+  --accent-600: #b78343;
+  --accent-700: #926835;
+  --accent-800: #6c4d28;
+  --accent-900: #4b351b;
+  --accent-950: #382814;
+}
+
+/* ------------------------ */
+/* 2️⃣ Tailwind inline theme */
+/* ------------------------ */
+@theme inline {
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+  --color-primary-950: var(--primary-950);
+
+  --color-accent-50: var(--accent-50);
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
+  --color-accent-950: var(--accent-950);
+}
+
+/* ------------------------ */
+/* 3️⃣ Example usage         */
+/* ------------------------ */
+@layer components {
+  .btn-primary {
+    @apply bg-[theme(color-primary-500)] text-white hover:bg-[theme(color-primary-600)];
+  }
+
+  .text-accent {
+    @apply text-[theme(color-accent-500)];
+  }
+}
